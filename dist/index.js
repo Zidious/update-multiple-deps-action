@@ -37,8 +37,11 @@ const main = async () => {
     try {
         const latest = core.getInput('latest');
         const next = core.getInput('next');
+        core.debug(`latest: ${latest}`);
+        core.debug(`next: ${next}`);
         if (!latest || !next) {
-            throw new Error('You must provide a value for latest or next inputs...');
+            core.setFailed('You must provide a value for latest or next inputs...');
+            return;
         }
         const packageNames = [
             ...(0, utils_1.splitAndAppendTag)(latest, 'latest'),

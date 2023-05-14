@@ -12,10 +12,13 @@ const main = async (): Promise<void> => {
     const latest = core.getInput('latest')
     const next = core.getInput('next')
 
-    if (!latest || !next) {
-      throw new Error('You must provide a value for latest or next inputs...')
-    }
+    core.debug(`latest: ${latest}`)
+    core.debug(`next: ${next}`)
 
+    if (!latest || !next) {
+      core.setFailed('You must provide a value for latest or next inputs...')
+      return
+    }
     const packageNames = [
       ...splitAndAppendTag(latest, 'latest'),
       ...splitAndAppendTag(next, 'next')
