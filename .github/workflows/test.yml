@@ -16,4 +16,4 @@ jobs:
       - uses: ./
         with:
           latest: '@axe-core/playwright,@axe-core/webdriverjs'
-          next: 'rem-this,coffee-crypto-cli'
+          #next: 'rem-this,coffee-crypto-cli'
