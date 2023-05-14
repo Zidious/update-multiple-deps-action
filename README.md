@@ -28,7 +28,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - uses: zidious/update-multiple-deps-action@v1
+      - uses: zidious/update-multiple-deps-action@v1.0.1
         with:
             latest: 'typescript,@types/node'
             next: 'react'
