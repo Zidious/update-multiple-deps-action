@@ -39,7 +39,7 @@ const main = async () => {
         const next = core.getInput('next');
         core.debug(`latest: ${latest}`);
         core.debug(`next: ${next}`);
-        if (!latest || !next) {
+        if (!latest && !next) {
             core.setFailed('You must provide a value for latest or next inputs...');
             return;
         }
